@@ -118,9 +118,9 @@ def compress():
     return newList
 
 resultFinalPath = "result" + ".txt"
-MainResult = open(os.path.join(path, resultFinalPath), "w")
+MainResult = open(os.path.join(path, resultFinalPath), "a")
 #for each video
-for i in range(89,101):
+for i in range(70,80):
     path_oneVideo = os.path.join(path_bg, str(i))
     #if folder background exist
     if not os.path.exists(path_oneVideo):
@@ -172,7 +172,7 @@ for i in range(89,101):
         # result.write(":")
         # result.write(str(second)) #second
         # result.write(" ")
-        second = t / frame_per_second
+        second = int (t / frame_per_second)
         if second > 2:
             resultString = str(i) + " " + str(second)
             result.write(resultString + "\n")
